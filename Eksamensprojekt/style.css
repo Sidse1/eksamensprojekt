@@ -39,14 +39,8 @@ h2{
     color: black;
     margin-left: 20px;
     font-size: 20px;
-    transition: 0.5s;
   }
   
-  .navbar a :hover{
-    background-color: #A9C7B6;
-    border-radius: 30%;
-    transition-duration: 0.5s;
-  }
   .Logo {
     width: 15em; /* Juster som nødvendigt */
     height: auto;
@@ -254,6 +248,7 @@ h2{
     background: #fff;
     display: flex;
     flex-direction: column; 
+    border-radius: 10px ;
 }
 
 .kontakt-left {
@@ -266,6 +261,7 @@ h2{
     padding: 20px; 
     text-align: left;
     background: #A9C7B6;
+    border-radius: 10px;
 }
 
 .imput-row {
@@ -357,6 +353,7 @@ tr td {
     background-color: #A9C7B6;
     width: 100%;
     padding: 70px 30px 20px;
+    border-radius: 20% 20% 0% 0%;
 }
 .socialicons{
      display: flex;
