@@ -1,58 +1,85 @@
+*{
+    box-sizing: border-box;
+}
 body{
     background: #CADFEF;
     font-family:'Quicksand', sans-serif; 
-  
+    margin: 0;
+    padding: 0; 
 }
-.header{
- background: #CADFEF;
- height:12%;
-display: flex;
- align-items: center;
- padding-left: 8%;
- padding-right: 8%;
-box-sizing: border-box;
-flex-direction: row;
-justify-content: space-between;
 
+h1{
+    font-size: 5em;
+    font-weight: bolder;
 }
-.navbar{ 
+h2{
+    font-weight: bold;
+}
+
+
+.header {
+    background: #CADFEF;
+    height: 15em; 
+    display: flex;
+    align-items: center;
+    padding-left: 2em;
+    padding-right: 2em;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-between;
+}
   
+  .navbar {
     text-align: right;
     margin-left: auto;
-}
-.navbar a{
+  }
+  
+  .navbar a {
     text-decoration: none;
     color: black;
     margin-left: 20px;
     font-size: 20px;
+    transition: 0.5s;
+  }
+  
+  .navbar a :hover{
+    background-color: #A9C7B6;
+    border-radius: 30%;
+    transition-duration: 0.5s;
+  }
+  .Logo {
+    width: 15em; /* Juster som nødvendigt */
+    height: auto;
 }
-.Logo{
-    width: 150px;
-    cursor: pointer;
+  
+@media screen and (max-width: 600px) {
+    .header {
+        height: auto; 
+        flex-direction: column;
+    }
+
+    .navbar {
+        text-align: center; 
+        margin: 20px ; 
+    }
+
+    .Logo {
+        width: 100%; 
+    }
 }
+ 
+
+
 .start {
     background-color: #A9C7B6;
     border-radius: 50% 20%;
-}
-.mig{ 
-    background-color: #CADFEF;
-    width: 100%;
-    padding: 70px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding-bottom: 70px;
-    position: relative;
-    z-index: 1;
-    display: inline-block;
+    flex-direction: row-reverse;
 }
-.kontakt{ background-color: #CADFEF;
-}
-h1{
-    font-size: 5em;
-    font-weight: bold;
-}
-h2{
-    font-weight: lighter;
-} 
+
 .starts{
     text-align: right;
     padding-right: 130px;
@@ -63,26 +90,85 @@ h2{
     padding-right: 130px ;
     padding-bottom: 70px;
 }
+.forside{
+    align-items: start;
+    padding-left: 50px;
+    width: 500px;
+}
 
-.ommigbillede{
-    border-radius: 50%;
-    align-items: center;
+
+@media only screen and (max-width: 600px) {
+    .start {
+        flex-direction: column; 
+    }
+
+    .starts,
+    .starttekst {
+        text-align: center; 
+        padding-right: 0;
+        font-size: 3em; 
+    }
+
+    .forside {
+        padding-left: 0;
+        display: none; 
+    }
+}
+.mig {
+    background-color: #CADFEF;
+    width: 100%;
+    padding: 70px 0;
+    text-align: center;
+    padding-bottom: 70px;
     position: relative;
-    opacity: 50%;
-    max-width: 30%;
+    z-index: 1;
+}
+
+.ommig-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.ommigbillede {
+    border-radius: 50%;
+    max-width: 80%;
     height: auto;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
-.ommigover{
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+.ommigtekst {
+    text-align: left;
 }
-.ommigunder{
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+
+
+  .ommigunder ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  .ommigunder ul li {
+    margin-bottom: 5px; 
+  }
+  @media screen and (max-width: 600px) {
+    .ommig-container {
+        padding: 20px;
+        flex-direction: column-reverse;
+    }
+
+    .ommigtekst {
+        text-align: left;
+    }
+
+
+    .ommigbillede {
+        max-width: 100%;
+    }
 }
 
 .content {
@@ -100,11 +186,12 @@ h2{
     justify-content: center;
 }
 
+
 .image-container {
     position: relative;
     overflow: hidden;
-    width: 300px; /* Adjust the width of each container as needed */
-    height: 300px; /* Adjust the height of each container as needed */
+    width: auto; 
+    height: 300px; 
     border-radius: 50%;
 }
 
@@ -127,109 +214,144 @@ h2{
     transition: opacity 0.3s ease-in-out;
     display: flex;
     align-items: center;
-    justify-content: center;
     color: #fff;
     font-size: 1.5rem;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.overlay h2 {
+    font-size: 100%;
+}
+.overlay p {
+    font-size: 75%;
 }
 
-.image-container:hover img {
-    transform: scale(1.1);
+@media only screen and (max-width: 600px){
+    .liste{
+        grid-template-columns:repeat(1, 1fr) ;
+    }
+    .image-container{
+        width: auto;
+    }
 }
 
 .image-container:hover .overlay {
     opacity: 1;
 }
 
-
-@media (max-width: 600px) {
-    .liste{
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-.forside{
-    align-items: start;
-    padding-left: 50px;
-    max-width: 30%;
-    height: auto;
-    z-index: -2;
-    
-}
-.container{
+.container {
     width: 80%;
     margin: 50px auto;
     text-align: center;
 }
-.kontakt-box{
+
+.kontakt {
+    background-color: #CADFEF;
+}
+
+.kontakt-box {
     background: #fff;
     display: flex;
+    flex-direction: column; 
 }
-.kontakt-left{
-    flex-basis: 60%;
-    padding: 40px 60px;
+
+.kontakt-left {
+    flex-basis: 100%; 
+    padding: 20px; 
     text-align: left;
 }
-.kontakt-right{
-    flex-basis: 40%;
-    padding: 40px;
+.kontakt-right {
+    flex-basis: 100%; 
+    padding: 20px; 
+    text-align: left;
     background: #A9C7B6;
-    text-align: left;
 }
-.container p{
-    margin-bottom: 40px;
-}
-.container h3{
-    margin-bottom: 10px;
-}
-.imput-row{
+
+.imput-row {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; 
     margin-bottom: 20px;
 }
-.imput-row .input-group{
-    flex-basis: 45%;
- }
- input {
+
+.imput-row .input-group {
+    flex-basis: 100%; 
+}
+
+input {
     width: 100%;
     border: none;
     border-bottom: 1px solid black;
     outline: none;
     padding-bottom: 5px;
- }
- textarea{
+
+}
+textarea {
     width: 100%;
     border: 1px solid black;
     outline: none;
     padding: 10px;
     box-sizing: border-box;
- }
- label{
-    margin-bottom: 6px;
-    display: block;
- }
- button{
-    background: #A9C7B6;
-    width: 100px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    width: 20%; 
     border: none;
     outline: none;
     color: black;
     height: 35px;
     border-radius: 30px;
-    margin-top: 20px;
-    box-shadow: 0px 5px 15px 0px black;
- }
- .kontakt-left h3 {
+    background-color: #A9C7B6;
+
+}
+
+.kontakt-left h3 {
     font-weight: 600;
-    margin-bottom: 30px;
- }
- .kontakt-right h3{
+    margin-bottom: 20px;
+}
+.kontakt-right h3 {
     font-weight: 600;
-    margin-bottom: 30px;
- }
- tr td {
+    margin-bottom: 20px; 
+}
+
+tr td {
     padding-right: 20px;
     padding-top: 20px;
- }
+}
+
+
+@media (min-width: 600px) {
+    .kontakt-box {
+        flex-direction: row; 
+    }
+
+    .kontakt-left {
+        flex-basis: 60%;
+    }
+
+    .kontakt-right {
+        flex-basis: 40%;
+    }
+
+    .imput-row {
+        flex-direction: row; 
+    }
+
+    .imput-row .input-group {
+        flex-basis: 45%;
+    }
+}
+
+ 
+
+   
+
 
  .footer{
     background-color: #A9C7B6;
@@ -239,6 +361,7 @@ h2{
 .socialicons{
      display: flex;
      justify-content: center;
+     flex-direction: row;
 }
 .socialicons a {
     text-decoration: none;
@@ -277,4 +400,14 @@ h2{
     letter-spacing: 1px;
     font-weight: 400;
     margin: 0px 5px;
+}
+@media screen and (max-width: 600px) {
+    .footernav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footernav a {
+        margin: 10px;
+    }
 }
